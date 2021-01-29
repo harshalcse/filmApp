@@ -20,11 +20,13 @@ var filmsSchema = new Schema({
     },
     rating:  {
         type: String,
+        enum: ['1','2','3','4','5'],
+        default: '1',
         unique : false,
         required : true 
     },
     ticketPrice: {
-        type: String,
+        type: Number,
         unique : false,
         required : true
     },
