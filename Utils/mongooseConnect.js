@@ -1,6 +1,6 @@
 //require mongoose module
 var mongoose = require('mongoose');
-var mongodbUrl = require('config');
+var mongoUrl = require('../config.json').mongoDBUrl;
 //require chalk module to give colors to console text
 var chalk = require('chalk');
 
@@ -14,7 +14,7 @@ var termination = chalk.bold.magenta;
 //export this function and imported by server.js
 module.exports =function(){
 
-    mongoose.connect(mongodbUrl);
+    mongoose.connect(mongoUrl);
 
     mongoose.connection.on('connected', function(){
         console.log(connected("Mongoose default connection is open to ", mongodbUrl));

@@ -8,7 +8,7 @@ exports.create = (req, res) => {
         console.log(e);
         res.sendStatus(500);
       } else {
-        res.status(200).send({"status": 200, "data": newEntry});
+        res.status(200).send({"status": 200, "data": newEntry, "msg": "Film Created Successfully!"});
       }
     });
 
