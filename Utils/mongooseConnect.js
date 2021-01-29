@@ -1,11 +1,10 @@
 //require mongoose module
 var mongoose = require('mongoose');
-
+var mongodbUrl = require('config');
 //require chalk module to give colors to console text
 var chalk = require('chalk');
 
 //require database URL from properties file
-var dbURL = require('./properties').DB;
 
 var connected = chalk.bold.cyan;
 var error = chalk.bold.yellow;
@@ -15,10 +14,10 @@ var termination = chalk.bold.magenta;
 //export this function and imported by server.js
 module.exports =function(){
 
-    mongoose.connect(dbURL);
+    mongoose.connect(mongodbUrl);
 
     mongoose.connection.on('connected', function(){
-        console.log(connected("Mongoose default connection is open to ", dbURL));
+        console.log(connected("Mongoose default connection is open to ", mongodbUrl));
     });
 
     mongoose.connection.on('error', function(err){

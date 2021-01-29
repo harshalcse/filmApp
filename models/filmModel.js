@@ -1,12 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+mongoose.connect("mongodb://localhost:27017/myApp", {useNewUrlParser: true});
 var filmsSchema = new Schema({
     name :{
-        type: String,
-        unique : false,
-        required : true
-    },
-    description : {
         type: String,
         unique : false,
         required : true
@@ -22,7 +18,7 @@ var filmsSchema = new Schema({
         required : true
     },
     rating:  {
-        type: Enum,
+        type: String,
         unique : false,
         required : true 
     },
@@ -45,4 +41,7 @@ var filmsSchema = new Schema({
     timestamps: true
 });
 
-module.exports = filmsSchema;
+const models = {};
+models.Films = mongoose.model('films', filmsSchema);
+
+module.exports = models;

@@ -1,4 +1,4 @@
 {
-    "env": "Dev"
-    "mongoDBUrl": ""
+    "env": "Dev",
+    "mongoDBUrl": "mongodb://localhost:27017/myproject"
 }
