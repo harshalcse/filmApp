@@ -22,8 +22,7 @@ var filmsSchema = new Schema({
         type: String,
         enum: ['1','2','3','4','5'],
         default: '1',
-        unique : false,
-        required : true 
+        unique : false
     },
     ticketPrice: {
         type: Number,

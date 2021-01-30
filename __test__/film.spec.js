@@ -18,8 +18,7 @@ describe("Testing the films API", () => {
 
 		const response = await supertest(app).post('/films').send({
 			name: 'New Movie',
-			description: 'Synopsis of the new movie',
-            rating: 'PG',
+			description: 'Synopsis of the new film',
             realeaseDate: '29-10-1991',
             ticketPrice: "200",
             country: "India",
