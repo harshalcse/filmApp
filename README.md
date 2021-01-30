@@ -13,11 +13,11 @@ This is the seed for Node.js with Express.js. This should be _forked_ to create 
 `
 ## Run the API with a specific environment
 
-/films method post ==> create Film
-/films/:filmId method get ==> get Film details by filmId
-/films method get ==> get Film List
-/films/:filmId method put ==> update Film
-/films/:filmId method delete ==> delete Film
+- /films method post ==> create Film
+- /films/:filmId method get ==> get Film details by filmId
+- /films method get ==> get Film List
+- /films/:filmId method put ==> update Film
+- /films/:filmId method delete ==> delete Film
 
 ## Test
 

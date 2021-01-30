@@ -6,7 +6,7 @@ exports.create = (req, res) => {
     Film.create(newEntry, (e,newEntry) => {
       if(e) {
         console.log(e);
-        res.sendStatus(500);
+        res.send({"status": 500, "errMsg": e.message});
       } else {
         res.status(200).send({"status": 200, "data": newEntry, "msg": "Film Created Successfully!"});
       }
@@ -20,7 +20,7 @@ exports.findAll = (req, res) => {
   
     Film.find(query, (e,result) => {
       if(e) {
-        res.status(500).send(e);
+        res.send({"status": 500, "errMsg": e.message});
         console.log(e.message);
       } else {
         res.status(200).send({"status": 200, "data": result});
@@ -35,7 +35,7 @@ exports.findOne = (req, res) => {
   
     Film.findById(req.params.filmId, (e,result) => {
       if(e) {
-        res.status(500).send(e);
+        res.send({"status": 500, "errMsg": e.message});
         console.log(e.message);
       } else {
         res.status(200).send({"status": 200,"data": result});
@@ -49,7 +49,7 @@ exports.update = (req, res) => {
     const changedEntry = req.body;
     Film.update({ _id: req.params._id }, { $set: changedEntry }, (e) => {
       if (e)
-        res.sendStatus(500);
+        res.send({"status": 500, "errMsg": e.message});
       else
         res.status(200).send({"msg": "Film Data Updated SuccessFully!", "status": 200});
     });
@@ -61,7 +61,7 @@ exports.delete = (req, res) => {
 
     Collection.remove({ _id: req.params._id }, (e) => {
         if (e)
-        res.status(500).send(e);
+        res.send({"status": 500, "errMsg": e.message});
         else
           res.status(200).send({"msg": "Film Deleted Successfully!","status": 200});
       });

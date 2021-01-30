@@ -14,7 +14,7 @@ var filmsSchema = new Schema({
         required : true
     },
     realeaseDate: {
-        type: String,
+        type: Number,
         unique : false,
         required : true
     },
